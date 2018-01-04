@@ -1,0 +1,46 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Agenceota
+ *
+ * @ORM\Table(name="agenceota", indexes={@ORM\Index(name="FK_Association_1", columns={"idAgence"}), @ORM\Index(name="FK_Association_20", columns={"idOperateur"})})
+ * @ORM\Entity
+ */
+class Agenceota
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idAgenceOta", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idagenceota;
+
+    /**
+     * @var \Ota
+     *
+     * @ORM\ManyToOne(targetEntity="Ota")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOperateur", referencedColumnName="idOperateur")
+     * })
+     */
+    private $idoperateur;
+
+    /**
+     * @var \Agence
+     *
+     * @ORM\ManyToOne(targetEntity="Agence")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idAgence", referencedColumnName="idAgence")
+     * })
+     */
+    private $idagence;
+
+
+}
+

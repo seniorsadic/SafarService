@@ -1,0 +1,71 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Operation
+ *
+ * @ORM\Table(name="operation", indexes={@ORM\Index(name="FK_Association_11", columns={"idUser"})})
+ * @ORM\Entity
+ */
+class Operation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idOperation", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idoperation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="service", type="string", length=254, nullable=true)
+     */
+    private $service;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=254, nullable=true)
+     */
+    private $reference;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="statut", type="string", length=254, nullable=true)
+     */
+    private $statut;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montant", type="decimal", precision=8, scale=0, nullable=true)
+     */
+    private $montant;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var \Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idUser", referencedColumnName="idUser")
+     * })
+     */
+    private $iduser;
+
+
+}
+

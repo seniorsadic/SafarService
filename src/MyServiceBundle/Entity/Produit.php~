@@ -1,0 +1,67 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Produit
+ *
+ * @ORM\Table(name="produit", indexes={@ORM\Index(name="FK_Association_3", columns={"idCategorie"}), @ORM\Index(name="FK_Association_5", columns={"idAgence"})})
+ * @ORM\Entity
+ */
+class Produit
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idProduit", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idproduit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="designation", type="string", length=254, nullable=true)
+     */
+    private $designation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="quantite", type="string", length=254, nullable=true)
+     */
+    private $quantite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prix", type="string", length=254, nullable=true)
+     */
+    private $prix;
+
+    /**
+     * @var \Agence
+     *
+     * @ORM\ManyToOne(targetEntity="Agence")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idAgence", referencedColumnName="idAgence")
+     * })
+     */
+    private $idagence;
+
+    /**
+     * @var \Categorie
+     *
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idCategorie", referencedColumnName="idCategorie")
+     * })
+     */
+    private $idcategorie;
+
+
+}
+

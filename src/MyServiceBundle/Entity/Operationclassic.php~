@@ -1,0 +1,147 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Operationclassic
+ *
+ * @ORM\Table(name="operationclassic", indexes={@ORM\Index(name="FK_Association_14", columns={"idTypeOperation"}), @ORM\Index(name="FK_Association_6", columns={"idOperateur"}), @ORM\Index(name="FK_Generalisation_3", columns={"idOperation"})})
+ * @ORM\Entity
+ */
+class Operationclassic
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idOperationClassic", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idoperationclassic;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commission", type="decimal", precision=8, scale=0, nullable=true)
+     */
+    private $commission;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="correspondant", type="string", length=254, nullable=true)
+     */
+    private $correspondant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="position", type="string", length=254, nullable=true)
+     */
+    private $position;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="paysEnvoi", type="string", length=254, nullable=true)
+     */
+    private $paysenvoi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="paysBeneficiaire", type="string", length=254, nullable=true)
+     */
+    private $paysbeneficiaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="deviseEnvoi", type="string", length=254, nullable=true)
+     */
+    private $deviseenvoi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="deviseReception", type="string", length=254, nullable=true)
+     */
+    private $devisereception;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pin", type="string", length=254, nullable=true)
+     */
+    private $pin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rate", type="decimal", precision=8, scale=0, nullable=true)
+     */
+    private $rate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=254, nullable=true)
+     */
+    private $action;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="paiement", type="string", length=254, nullable=true)
+     */
+    private $paiement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mode", type="string", length=254, nullable=true)
+     */
+    private $mode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pseudo", type="string", length=254, nullable=true)
+     */
+    private $pseudo;
+
+    /**
+     * @var \Operation
+     *
+     * @ORM\ManyToOne(targetEntity="Operation")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOperation", referencedColumnName="idOperation")
+     * })
+     */
+    private $idoperation;
+
+    /**
+     * @var \Typeoperation
+     *
+     * @ORM\ManyToOne(targetEntity="Typeoperation")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idTypeOperation", referencedColumnName="idTypeOperation")
+     * })
+     */
+    private $idtypeoperation;
+
+    /**
+     * @var \Ota
+     *
+     * @ORM\ManyToOne(targetEntity="Ota")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOperateur", referencedColumnName="idOperateur")
+     * })
+     */
+    private $idoperateur;
+
+
+}
+

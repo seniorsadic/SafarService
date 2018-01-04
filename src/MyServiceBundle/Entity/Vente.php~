@@ -1,0 +1,36 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Vente
+ *
+ * @ORM\Table(name="vente", indexes={@ORM\Index(name="FK_Generalisation_2", columns={"idOperation"})})
+ * @ORM\Entity
+ */
+class Vente
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idVente", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idvente;
+
+    /**
+     * @var \Operation
+     *
+     * @ORM\ManyToOne(targetEntity="Operation")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOperation", referencedColumnName="idOperation")
+     * })
+     */
+    private $idoperation;
+
+
+}
+

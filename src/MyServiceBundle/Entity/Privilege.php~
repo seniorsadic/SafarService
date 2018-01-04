@@ -1,0 +1,33 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Privilege
+ *
+ * @ORM\Table(name="privilege")
+ * @ORM\Entity
+ */
+class Privilege
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPrivilege", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idprivilege;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=254, nullable=true)
+     */
+    private $nom;
+
+
+}
+

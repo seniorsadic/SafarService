@@ -1,0 +1,67 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Detailvente
+ *
+ * @ORM\Table(name="detailvente", indexes={@ORM\Index(name="FK_DetailVente", columns={"idProduit"}), @ORM\Index(name="FK_DetailVente1", columns={"idVente"})})
+ * @ORM\Entity
+ */
+class Detailvente
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDetailVente", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $iddetailvente;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantite", type="integer", nullable=true)
+     */
+    private $quantite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prixUnitaire", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $prixunitaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="remise", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $remise;
+
+    /**
+     * @var \Vente
+     *
+     * @ORM\ManyToOne(targetEntity="Vente")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idVente", referencedColumnName="idVente")
+     * })
+     */
+    private $idvente;
+
+    /**
+     * @var \Produit
+     *
+     * @ORM\ManyToOne(targetEntity="Produit")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idProduit", referencedColumnName="idProduit")
+     * })
+     */
+    private $idproduit;
+
+
+}
+

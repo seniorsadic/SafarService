@@ -1,0 +1,46 @@
+<?php
+
+namespace MyServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Roleprivilege
+ *
+ * @ORM\Table(name="roleprivilege", indexes={@ORM\Index(name="FK_Association_13", columns={"idPrivilege"}), @ORM\Index(name="FK_Association_123", columns={"idRole"})})
+ * @ORM\Entity
+ */
+class Roleprivilege
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPrivilegeRole", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idprivilegerole;
+
+    /**
+     * @var \Role
+     *
+     * @ORM\ManyToOne(targetEntity="Role")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idRole", referencedColumnName="idRole")
+     * })
+     */
+    private $idrole;
+
+    /**
+     * @var \Privilege
+     *
+     * @ORM\ManyToOne(targetEntity="Privilege")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPrivilege", referencedColumnName="idPrivilege")
+     * })
+     */
+    private $idprivilege;
+
+
+}
+
