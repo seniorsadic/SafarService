@@ -56,3 +56,11 @@ fe7541,::1,GET,http://localhost/Safar18/web/app_dev.php/Taille,1513860988,,200
 f83e23,::1,GET,http://localhost/Safar18/web/app_dev.php/Taille/orange1.xls,1513861208,,404
 491aef,::1,GET,http://localhost/Safar18/web/app_dev.php/test,1513861465,c590d9,200
 c590d9,::1,GET,http://localhost/Safar18/web/app_dev.php/test,1513861465,,500
+a14e3e,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515079512,,200
+03d05e,::1,GET,http://localhost/Safar18/web/app_dev.php/agences,1515082680,,200
+74f1a9,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515082681,,200
+fe00f6,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515082752,,200
+c019e3,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515082953,,200
+f56151,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515082992,,200
+55b5aa,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515083033,,200
+9985a8,::1,GET,http://localhost/Safar18/web/app_dev.php/villes,1515083203,,200
