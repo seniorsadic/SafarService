@@ -102,4 +102,15 @@ class VenteController extends FOSRestController
         $restresult = $this->getDoctrine()->getRepository('MyServiceBundle:Detailvente')->findBy(array ('idvente' =>$vente));
         return $restresult;
     }
+
+    /**
+     * @Rest\Get("/rapportOperateur/{idoperation}")
+     */
+    public function getRapportOperateur($idoperation)
+    {
+	
+        $restresult = $this->getDoctrine()->getRepository('MyServiceBundle:Operationclassic')->findBy(array ('idoperateur' =>$idoperation));
+        return $restresult;
+    }
+
 }

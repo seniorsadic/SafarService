@@ -790,6 +790,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // myservice_vente_getrapportoperateur
+        if (0 === strpos($pathinfo, '/rapportOperateur') && preg_match('#^/rapportOperateur/(?P<idoperation>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_myservice_vente_getrapportoperateur;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'myservice_vente_getrapportoperateur')), array (  '_controller' => 'MyServiceBundle\\Controller\\VenteController::getRapportOperateur',));
+        }
+        not_myservice_vente_getrapportoperateur:
+
         if (0 === strpos($pathinfo, '/ville')) {
             // myservice_ville_addville
             if ($pathinfo === '/ville/') {

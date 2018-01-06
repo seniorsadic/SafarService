@@ -1,0 +1,57 @@
+INSERT INTO `safar`.`operation` (`idOperation`, `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
+VALUES  (NULL, '1', 'Cash in', 'CI170817.0853.B13583', 'Succès', '2500', CURRENT_DATE()), 
+	(NULL, '1', 'Cash Out', 'CO170817.0852.B00896', 'Succès', '5000', CURRENT_DATE()),
+	(NULL, '1', 'Cash Out', 'CO170817.0906.A96714', 'Succès', '2500', CURRENT_DATE()), 
+	(NULL, '1', 'C2C Transfer', 'PP170817.0922.B47585', 'Succès', '100000', CURRENT_DATE()), 
+	(NULL, '1', 'Cash in', 'CI170817.0923.A16688', 'Succès', '113500', CURRENT_DATE());
+
+
+INSERT INTO `safar`.`operationclassic` (`idOperationClassic`, `idOperation`, `idTypeOperation`, `idOperateur`, `commission`, `correspondant`, `position`, `paysEnvoi`, `paysBeneficiaire`, `deviseEnvoi`, `deviseReception`, `pin`, `rate`, `action`, `paiement`, `mode`, `pseudo`) 
+VALUES  (NULL, '31', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(NULL, '32', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '33', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '34', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '35', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '36', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '37', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '38', NULL, '3', '100', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '39', NULL, '3', '340', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '40', NULL, '3', '200', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '41', NULL, '3', '36', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '42', NULL, '3', '140', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '43', NULL, '3', '59', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '44', NULL, '3', '0', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL), 
+	(NULL, '45', NULL, '3', '700', '771889387', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+SELECT * FROM `operation` WHERE `date` like '2018-01-05%'
+
+
+Chargement nouvelle valeur pour orange money
+INSERT INTO `safar`.`operation` (`idOperation`, `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
+VALUES  (NULL, 1, 'Cash Out', 'CO170817.1036.A03678', 'Echec', '14000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out', 'CO170817.1029.A02897', 'Echec', '4500', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out For Non Register', 'CN170817.1113.B51547', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out', 'CO170817.1122.A08309', 'Echec', '2400', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash in', 'CI170817.1632.B43417', 'Echec', '63000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out', 'CO170817.1805.A43100', 'Succès', '5000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash in', 'CI170817.0832.A15287', 'Succès', '5350', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash in', 'CI170817.0837.B13245', 'Succès', '48000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out For Non Register', 'CN170817.0848.B50750', 'Succès', '10000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash in', 'CI170817.0853.B13583', 'Succès', '2500', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out', 'CO170817.0852.B00896', 'Succès', '5000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash Out', 'CO170817.0906.A96714', 'Succès', '2500', CURRENT_DATE()-1),
+
+	(NULL, 1, 'C2C Transfer', 'PP170817.0922.B47585', 'Succès', '100000', CURRENT_DATE()-1),
+
+	(NULL, 1, 'Cash in', 'CI170817.0923.A16688', 'Succès', '113500', CURRENT_DATE()-1);
