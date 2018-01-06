@@ -28,11 +28,7 @@ SELECT * FROM `operation` WHERE `date` like '2018-01-05%'
 
 Chargement nouvelle valeur pour orange money
 INSERT INTO `safar`.`operation` (`idOperation`, `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
-VALUES  (NULL, 1, 'Cash Out', 'CO170817.1036.A03678', 'Echec', '14000', CURRENT_DATE()-1),
-
-	(NULL, 1, 'Cash Out', 'CO170817.1029.A02897', 'Echec', '4500', CURRENT_DATE()-1),
-
-	(NULL, 1, 'Cash Out For Non Register', 'CN170817.1113.B51547', CURRENT_DATE()-1),
+VALUES  (NULL, 1, 'Cash Out For Non Register', 'CN170817.1113.B51547','Echec', '4500', CURRENT_DATE()-1),
 
 	(NULL, 1, 'Cash Out', 'CO170817.1122.A08309', 'Echec', '2400', CURRENT_DATE()-1),
 
@@ -55,3 +51,35 @@ VALUES  (NULL, 1, 'Cash Out', 'CO170817.1036.A03678', 'Echec', '14000', CURRENT_
 	(NULL, 1, 'C2C Transfer', 'PP170817.0922.B47585', 'Succès', '100000', CURRENT_DATE()-1),
 
 	(NULL, 1, 'Cash in', 'CI170817.0923.A16688', 'Succès', '113500', CURRENT_DATE()-1);
+
+
+Chargement rapid Transfert
+INSERT INTO `safar`.`operation` (`idOperation`, `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
+	VALUES  (NULL, '1', 'OP', 'FR135861766', 'Paid', '15000', CURRENT_DATE()), 
+		(NULL, '1', 'OP', 'IT133121766', 'Paid', '62510', CURRENT_DATE()), 
+		(NULL, '1', 'OP', 'FR134578366', 'Paid', '25000', CURRENT_DATE()), 
+		(NULL, '1', 'OP', 'US903377382', 'Paid', '416585', CURRENT_DATE()), 
+		(NULL, '1', 'OP', 'IT132068366', 'Paid', '23680', CURRENT_DATE());
+
+INSERT INTO `safar`.`operationclassic` (`idOperationClassic`, `idOperation`, `idTypeOperation`, `idOperateur`, `commission`, `correspondant`, `position`, `paysEnvoi`, `paysBeneficiaire`, `deviseEnvoi`, `deviseReception`, `pin`, `rate`, `action`, `paiement`, `mode`, `pseudo`) 
+	VALUES  (NULL, '51', NULL, '4', '0', 'asdiouf', NULL, 'France', 'Senegal', 'XOF', 'XOF', NULL, '655,957', NULL, NULL, NULL, NULL),
+		(NULL, '52', NULL, '4', '0', 'asdiouf', NULL, 'Italy', 'Senegal', 'XOF', 'XOF', NULL, '655,95', NULL, NULL, NULL, NULL),
+		(NULL, '53', NULL, '4', '0', 'asdiouf', NULL, 'France', 'Senegal', 'XOF', 'XOF', NULL, '655,957', NULL, NULL, NULL, NULL),
+		(NULL, '54', NULL, '4', '0', 'asdiouf', NULL, 'United States', 'Senegal', 'XOF', 'XOF', NULL, '557,676', NULL, NULL, NULL, NULL),
+		(NULL, '55', NULL, '4', '0', 'asdiouf', NULL, 'Italy', 'Senegal', 'XOF', 'XOF', NULL, '655,95', NULL, NULL, NULL, NULL);
+
+INSERT INTO `safar`.`operation` (`idOperation`, `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
+	VALUES  (NULL, '1', 'OP', 'FR135861766', 'Paid', '15000', CURRENT_DATE()-1), 
+		(NULL, '1', 'OP', 'IT133121766', 'Paid', '62510', CURRENT_DATE()-1), 
+		(NULL, '1', 'OP', 'FR134578366', 'Paid', '25000', CURRENT_DATE()-1), 
+		(NULL, '1', 'OP', 'US903377382', 'Paid', '416585', CURRENT_DATE()-1), 
+		(NULL, '1', 'OP', 'IT132068366', 'Paid', '23680', CURRENT_DATE()-1);
+
+/**
+        * @Rest\Get("/rapport/{idoperateur}")
+        */
+       public function getCategorieById($idoperateur)
+       {
+           $restresult = $this->getDoctrine()->getRepository('MyServiceBundle:Operationclassic')->findBy(array('idoperateur'=>$idoperateur);
+           return $restresult;
+       }
