@@ -108,6 +108,9 @@ class VenteController extends FOSRestController
      */
     public function getRapportOperateur($idoperation)
     {
+        // $query=$em->createQuery('select p from MyServiceBundle:Operationclassic where')
+        // ->setParameter();
+        // $query->getResult();
 	
         $restresult = $this->getDoctrine()->getRepository('MyServiceBundle:Operationclassic')->findBy(array ('idoperateur' =>$idoperation));
         return $restresult;

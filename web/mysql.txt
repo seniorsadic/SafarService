@@ -1,9 +1,13 @@
 INSERT INTO `safar`.`operation` (`idOperation`, `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
-VALUES  (NULL, '1', 'Cash in', 'CI170817.0853.B13583', 'Succès', '2500', CURRENT_DATE()), 
-	(NULL, '1', 'Cash Out', 'CO170817.0852.B00896', 'Succès', '5000', CURRENT_DATE()),
-	(NULL, '1', 'Cash Out', 'CO170817.0906.A96714', 'Succès', '2500', CURRENT_DATE()), 
-	(NULL, '1', 'C2C Transfer', 'PP170817.0922.B47585', 'Succès', '100000', CURRENT_DATE()), 
-	(NULL, '1', 'Cash in', 'CI170817.0923.A16688', 'Succès', '113500', CURRENT_DATE());
+VALUES  (NULL, '1', 'Cash in', 'CI170817.0853.B13583', 'Succï¿½s', '2500', CURRENT_DATE()), 
+	(NULL, '1', 'Cash Out', 'CO170817.0852.B00896', 'Succï¿½s', '5000', CURRENT_DATE()),
+	(NULL, '1', 'Cash Out', 'CO170817.0906.A96714', 'Succï¿½s', '2500', CURRENT_DATE()), 
+	(NULL, '1', 'C2C Transfer', 'PP170817.0922.B47585', 'Succï¿½s', '100000', CURRENT_DATE()), 
+	(NULL, '1', 'Cash in', 'CI170817.0923.A16688', 'Succï¿½s', '113500', CURRENT_DATE());
+
+INSERT INTO `safar`.`operation` ( `idUser`, `service`, `reference`, `statut`, `montant`, `date`) 
+VALUES 
+SELECT idUser,service,reference,statut,montant, CURRENT_DATE()-10 as date FROM `operation` where date like '2018-01-05%' and service!='OP'
 
 
 INSERT INTO `safar`.`operationclassic` (`idOperationClassic`, `idOperation`, `idTypeOperation`, `idOperateur`, `commission`, `correspondant`, `position`, `paysEnvoi`, `paysBeneficiaire`, `deviseEnvoi`, `deviseReception`, `pin`, `rate`, `action`, `paiement`, `mode`, `pseudo`) 
@@ -34,23 +38,23 @@ VALUES  (NULL, 1, 'Cash Out For Non Register', 'CN170817.1113.B51547','Echec', '
 
 	(NULL, 1, 'Cash in', 'CI170817.1632.B43417', 'Echec', '63000', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash Out', 'CO170817.1805.A43100', 'Succès', '5000', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash Out', 'CO170817.1805.A43100', 'Succï¿½s', '5000', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash in', 'CI170817.0832.A15287', 'Succès', '5350', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash in', 'CI170817.0832.A15287', 'Succï¿½s', '5350', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash in', 'CI170817.0837.B13245', 'Succès', '48000', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash in', 'CI170817.0837.B13245', 'Succï¿½s', '48000', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash Out For Non Register', 'CN170817.0848.B50750', 'Succès', '10000', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash Out For Non Register', 'CN170817.0848.B50750', 'Succï¿½s', '10000', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash in', 'CI170817.0853.B13583', 'Succès', '2500', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash in', 'CI170817.0853.B13583', 'Succï¿½s', '2500', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash Out', 'CO170817.0852.B00896', 'Succès', '5000', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash Out', 'CO170817.0852.B00896', 'Succï¿½s', '5000', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash Out', 'CO170817.0906.A96714', 'Succès', '2500', CURRENT_DATE()-1),
+	(NULL, 1, 'Cash Out', 'CO170817.0906.A96714', 'Succï¿½s', '2500', CURRENT_DATE()-1),
 
-	(NULL, 1, 'C2C Transfer', 'PP170817.0922.B47585', 'Succès', '100000', CURRENT_DATE()-1),
+	(NULL, 1, 'C2C Transfer', 'PP170817.0922.B47585', 'Succï¿½s', '100000', CURRENT_DATE()-1),
 
-	(NULL, 1, 'Cash in', 'CI170817.0923.A16688', 'Succès', '113500', CURRENT_DATE()-1);
+	(NULL, 1, 'Cash in', 'CI170817.0923.A16688', 'Succï¿½s', '113500', CURRENT_DATE()-1);
 
 
 Chargement rapid Transfert
